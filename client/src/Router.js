@@ -16,7 +16,6 @@ import LoginPage from "./Pages/Login/LoginPage";
 
 export default function Router() {
   const { loggedIn } = useContext(AuthenticationContext);
-  console.log(loggedIn);
 
   return (
     <RouterWrapper>

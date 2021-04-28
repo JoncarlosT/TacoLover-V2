@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const StyledLoginForm = styled.div`
   padding-top: 20px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const LoginFrom = styled.form`
@@ -36,4 +38,10 @@ export const LoginButton = styled.div`
     color: #000000;
     background-color: #ffffff;
   }
+`;
+
+export const ErrorMessage = styled.div`
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
 `;

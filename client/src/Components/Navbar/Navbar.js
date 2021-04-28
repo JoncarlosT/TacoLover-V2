@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 //IMPORT MATERIAL-UI
 import MenuIcon from "@material-ui/icons/Menu";
 import { Menu, MenuItem } from "@material-ui/core";
+
+//IMPORT AUTHENTICATION
+import AuthenticationContext from "../../Context/AuthenticationContext";
+import LogOutButton from "../Authentication/LogOutButton/LogOutButton";
 
 //IMPORTING STYLED COMPONENTS
 import {
@@ -12,7 +16,12 @@ import {
   NavbarButton,
   MobileIcon,
   MobileMenuItem,
+  LogOutMenuItem,
 } from "./Styles";
+
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import axios from "axios";
+import DevLocalHost from "../../GlobalProvider";
 
 export default function Navbar() {
   //CHECKS IF SCREEN IS IN MOBILE
@@ -40,6 +49,18 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
+  //MOBILE LOGOUT
+  const history = useHistory();
+
+  const logOut = async () => {
+    await axios.get(DevLocalHost() + "/authentication/logout");
+    await getLoggedIn();
+    history.push("/");
+  };
+
+  //LOGIN CHECK
+  const { loggedIn, getLoggedIn } = useContext(AuthenticationContext);
+
   return (
     <StyledNavbar>
       <Logo to="/">
@@ -66,7 +87,11 @@ export default function Navbar() {
               <MobileMenuItem to="/Recipes">Recipes</MobileMenuItem>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <MobileMenuItem to="/Login">Login</MobileMenuItem>
+              {loggedIn ? (
+                <LogOutMenuItem onClick={logOut}>LogOut</LogOutMenuItem>
+              ) : (
+                <MobileMenuItem to="/Login">Login</MobileMenuItem>
+              )}
             </MenuItem>
           </Menu>
         </>
@@ -74,7 +99,12 @@ export default function Navbar() {
         <NavbarButtonsWrapper>
           <NavbarButton to="/Restaurants">Restaurants</NavbarButton>
           <NavbarButton to="/Recipes">Recipes</NavbarButton>
-          <NavbarButton to="/Login">Login</NavbarButton>
+
+          {loggedIn ? (
+            <LogOutButton />
+          ) : (
+            <NavbarButton to="/Login">Login</NavbarButton>
+          )}
         </NavbarButtonsWrapper>
       )}
     </StyledNavbar>

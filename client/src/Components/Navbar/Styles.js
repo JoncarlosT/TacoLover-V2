@@ -81,5 +81,11 @@ export const MobileMenuItem = styled(Link)`
   font-size: 4vw;
   font-weight: bold;
   font-family: Nunito;
+`;
+
+export const LogOutMenuItem = styled.div`
+  color: black;
   font-size: 4vw;
+  font-weight: bold;
+  font-family: Nunito;
 `;
