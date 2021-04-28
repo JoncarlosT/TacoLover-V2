@@ -8,7 +8,7 @@ export const StyledRenderForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-color: red;
 `;
 
 export const HeaderWrapper = styled.div`
@@ -32,15 +32,8 @@ export const FormButton = styled.div`
   transition: all 0.2s;
   cursor: pointer;
 
-  &:active {
-    color: red;
-  }
-  /* &:active {
-    background-color: #e6007e;
-  }
-
   :hover {
     color: #000000;
     background-color: #ffffff;
-  } */
+  }
 `;
