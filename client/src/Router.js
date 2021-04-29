@@ -10,8 +10,8 @@ import Navbar from "./Components/Navbar/Navbar";
 
 //IMPORT PAGES
 import LandingPage from "./Pages/Landing/LandingPage";
-import RecipesPage from "./Pages/Recipe/RecipesPage";
-import RestaurantsPage from "./Pages/Restaurant/RestaurantsPage";
+import RecipesPage from "./Pages/Recipes/RecipesPage";
+import RestaurantsPage from "./Pages/Restaurants/RestaurantsPage";
 import LoginPage from "./Pages/Login/LoginPage";
 
 export default function Router() {

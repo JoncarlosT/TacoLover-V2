@@ -42,6 +42,7 @@ export default function RegisterForm() {
     try {
       await axios.post(DevLocalHost() + "/authentication/", registerData);
       await getLoggedIn();
+      history.push("/restaurants");
     } catch (err) {
       setError(err.response.data.errorMessage);
     }

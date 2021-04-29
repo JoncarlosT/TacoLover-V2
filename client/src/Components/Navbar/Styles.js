@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom/";
 
-//IMPORT MATERIAL-UI
-import { Menu, MenuItem } from "@material-ui/core";
-
 export const StyledNavbar = styled.div`
   background: none;
   height: 80px;
