@@ -11,7 +11,6 @@ export default function RecipePage() {
   return (
     <StyledRecipePage>
       <Title>Here's Our Recipes</Title>
-
       <RecipesWrapper>
         {RecipesList.map((food, i) => {
           return <FoodImageCard details={food} key={i} />;
