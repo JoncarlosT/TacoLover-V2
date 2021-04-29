@@ -9,12 +9,8 @@ export const GlobalStyle = createGlobalStyle`
         background-image: url(${bg});
         background-repeat: no-repeat;
         background-size: cover;
-         @media screen and (max-width: 625px) {
-            height: 100vh;
-          }
-         @media screen and (max-width: 375px) {
-            height: 150vh;
-          }
+        background-attachment: fixed;
+       
      }
     
 

@@ -21,7 +21,7 @@ const Details = [
     imageUrl: "Assets/taco-c.jpg",
     time: 1500,
     button: "Talk",
-    link: "/user",
+    link: "/login",
   },
 ];
 
