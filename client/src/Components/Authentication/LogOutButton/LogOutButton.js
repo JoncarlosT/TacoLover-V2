@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import axios from "axios";
-import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 //IMPORT AUTHENTICATION
 import AuthenticationContext from "../../../Context/AuthenticationContext";

@@ -12,6 +12,7 @@ import {
   LoginInput,
   LoginButton,
   ErrorMessage,
+  TextHeader,
 } from "./style";
 
 //IMPORT COMPONENTS
@@ -51,11 +52,12 @@ export default function LoginForm() {
 
   return (
     <StyledLoginForm>
+      <TextHeader>Don't Have An Account? Please Register</TextHeader>
       <LoginFrom onSubmit={(e) => login(e)}>
         <LoginInput
           placeholder="Email"
           value={email}
-          type="email submit"
+          type="email"
           label="Email"
           onChange={(e) => setEmail(e.target.value)}
           onKeyPress={(e) => EnterSubmit(e)}

@@ -20,9 +20,19 @@ router.post("/", async (req, res) => {
         .status(400)
         .json({ errorMessage: "Please Enter Same Password Twice" });
 
+    if (password.length < 6)
+      return res
+        .status(400)
+        .json({ errorMessage: "Password Must Be At least 6 Characters Long" });
+
     const existingUser = await User.findOne({ email });
     if (existingUser)
       return res.status(400).json({ errorMessage: "Email Already Being Used" });
+
+    if (!email.includes("@"))
+      return res
+        .status(400)
+        .json({ errorMessage: "Please enter a valid email" });
 
     //HASH THE PASSWORD
 

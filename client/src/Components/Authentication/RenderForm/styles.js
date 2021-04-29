@@ -8,7 +8,7 @@ export const StyledRenderForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: red;
+  background: rgba(0, 0, 0, 0.5);
 `;
 
 export const HeaderWrapper = styled.div`
