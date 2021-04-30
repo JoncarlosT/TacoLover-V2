@@ -10,7 +10,7 @@ const Details = [
   {
     title: "Recipes?",
     description: "Find Easy and quick recipes",
-    imageUrl: "Assets/taco-M.jpg",
+    imageUrl: "Assets/Taco-M.jpg",
     time: 1500,
     button: "Make",
     link: "/recipes",
@@ -18,7 +18,7 @@ const Details = [
   {
     title: "Communicate",
     description: "Leave Reviews on Restaurants and Recipes",
-    imageUrl: "Assets/taco-C.jpg",
+    imageUrl: "Assets/Taco-C.jpg",
     time: 1500,
     button: "Talk",
     link: "/login",
