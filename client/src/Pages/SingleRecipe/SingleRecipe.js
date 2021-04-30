@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
+import Loader from "react-loader-spinner";
 import Rating from "react-rating";
 
 //  IMPORT STYLES
@@ -22,6 +23,7 @@ import {
   CommentHeader,
   CommentButton,
   Comment,
+  RemoveButton,
 } from "./style";
 
 //IMPORT SELECTED CONTEXT
@@ -32,10 +34,18 @@ import AuthenticationContext from "../../Context/AuthenticationContext";
 
 //IMPORT DEV LOCALHOST
 import DevLocalHost from "../../GlobalProvider";
+import { LoaderWrapper } from "../Landing/styles";
 
 export default function SingleRecipe() {
   const { loggedIn } = useContext(AuthenticationContext);
   const { selectedFood } = useContext(UserSelectsContext);
+
+  //DELETE A REVIEW
+  const deleteReview = async (id) => {
+    await axios.delete(DevLocalHost() + "/review/recipe", {
+      data: { _id: id },
+    });
+  };
 
   //TACO LIST
   const [tacoInfo, setTacoInfo] = useState({});
@@ -50,12 +60,10 @@ export default function SingleRecipe() {
 
   useEffect(() => {
     getTaco(selectedFood);
-  }, []);
+  }, [selectedFood]);
 
   //GET REVIEWS
   const [reviews, setReviews] = useState([]);
-
-  console.log(reviews);
 
   const getReviews = async () => {
     await axios
@@ -67,7 +75,7 @@ export default function SingleRecipe() {
 
   useEffect(() => {
     getReviews();
-  }, [tacoInfo]);
+  }, [tacoInfo, deleteReview]);
 
   //GET CURRENT USER ID
   const [currentUserId, setCurrentUserId] = useState("");
@@ -79,7 +87,7 @@ export default function SingleRecipe() {
 
   useEffect(() => {
     getCurrentUserId();
-  }, []);
+  }, [currentUserId]);
 
   //POST REVIEW
   const [userComment, setUserComment] = useState("");
@@ -99,9 +107,10 @@ export default function SingleRecipe() {
 
   return (
     <>
-      {/* MAKE LOADING CIRCLE  */}
       {Object.entries(tacoInfo).length === 0 ? (
-        <StyledSingleRecipe></StyledSingleRecipe>
+        <LoaderWrapper>
+          <Loader type="ThreeDots" color="green" height={80} width={80} />
+        </LoaderWrapper>
       ) : (
         <StyledSingleRecipe>
           <TacoSide>
@@ -168,6 +177,14 @@ export default function SingleRecipe() {
                       fullSymbol={<FullHeart />}
                     />
                     <div>By: {item.author.userName}</div>
+
+                    {currentUserId === item.author._id ? (
+                      <RemoveButton onClick={() => deleteReview(item._id)}>
+                        Remove
+                      </RemoveButton>
+                    ) : (
+                      ""
+                    )}
                   </Comment>
                 );
               })}

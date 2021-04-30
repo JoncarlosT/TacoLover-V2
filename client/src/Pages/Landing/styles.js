@@ -7,6 +7,13 @@ export const StyledLandingPage = styled.div`
   align-items: center;
 `;
 
+export const LoaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+`;
+
 export const WelcomeHeader = styled.div`
   display: flex;
   flex-direction: column;

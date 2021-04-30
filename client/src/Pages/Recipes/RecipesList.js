@@ -1,11 +1,5 @@
 const RecipesList = [
   {
-    id: 637285,
-    title: "Catfish Tacos With Pimento Cheese Crema and Watermelon Salsa",
-    image: "https://spoonacular.com/recipeImages/637285-312x231.jpg",
-    imageType: "jpg",
-  },
-  {
     id: 648974,
     title: "Kk's Fish Tacos",
     image: "https://spoonacular.com/recipeImages/648974-312x231.jpg",
@@ -125,12 +119,6 @@ const RecipesList = [
     title: "Slow Cooker Salsa Verde Chicken Tacos",
     image: "https://spoonacular.com/recipeImages/713957-312x231.jpg",
     imageType: "jpg",
-  },
-  {
-    id: 782624,
-    title: "Crockpot Garlic Lime Salsa Meatball Tacos",
-    image: "https://spoonacular.com/recipeImages/782624-312x231.png",
-    imageType: "png",
   },
   {
     id: 632246,
