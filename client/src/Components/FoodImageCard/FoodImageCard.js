@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 //IMPORT STYLE
 import {
@@ -7,21 +7,29 @@ import {
   CardImage,
   CardInfo,
   CardTitle,
+  CardAction,
 } from "./styles";
 
-export default function FoodImageCard({ details }) {
+//IMPORT SELECTED CONTEXT
+import UserSelectsContext from "../../Context/UserSelectsContext";
+
+export default function FoodImageCard({ food }) {
+  const { setSelectedFood } = useContext(UserSelectsContext);
+
   const windowReset = () => {
     window.scroll(0, 0);
   };
 
   return (
     <StyledFoodImageCard>
-      <NavLink to={`/recipe/${details.id}`} onClick={() => windowReset()}>
-        <CardImage component="img" alt={details.title} src={details.image} />
-        <CardInfo>
-          <CardTitle>{details.title}</CardTitle>
-        </CardInfo>
-      </NavLink>
+      <CardAction onClick={() => setSelectedFood(food)}>
+        <NavLink to={`/recipe/${food.id}`} onClick={() => windowReset()}>
+          <CardImage component="img" alt={food.title} src={food.image} />
+          <CardInfo>
+            <CardTitle>{food.title}</CardTitle>
+          </CardInfo>
+        </NavLink>
+      </CardAction>
     </StyledFoodImageCard>
   );
 }

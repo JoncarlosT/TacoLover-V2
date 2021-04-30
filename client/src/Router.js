@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 
@@ -7,6 +7,9 @@ import AuthenticationContext from "./Context/AuthenticationContext";
 
 //IMPORT COMPONENTS/
 import Navbar from "./Components/Navbar/Navbar";
+
+//IMPORT SELECTED CONTEXT
+import UserSelectsContext from "./Context/UserSelectsContext";
 
 //IMPORT PAGES
 import LandingPage from "./Pages/Landing/LandingPage";
@@ -18,8 +21,8 @@ import LoginPage from "./Pages/Login/LoginPage";
 export default function Router() {
   const { loggedIn } = useContext(AuthenticationContext);
 
-  //USER SELECT TACO
-  const [foodSelected, setFoodSelected] = useState([]);
+  const { selectedFood } = useContext(UserSelectsContext);
+  // const { selectedRestaurant } = useContext(UserSelectsContext);
 
   return (
     <RouterWrapper>
@@ -30,13 +33,9 @@ export default function Router() {
 
           <Route path="/Restaurants" component={RestaurantsPage} />
 
-          <Route path="/Recipes">
-            <RecipesPage setFood={setFoodSelected} />
-          </Route>
+          <Route path="/Recipes" component={RecipesPage} />
 
-          <Route path={`/Recipe/${foodSelected.id}`}>
-            <SingleRecipe taco={foodSelected} />
-          </Route>
+          <Route path={`/Recipe/${selectedFood.id}`} component={SingleRecipe} />
 
           <Route path="/Login" component={LoginPage} />
         </Switch>

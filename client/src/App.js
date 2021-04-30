@@ -5,12 +5,17 @@ import axios from "axios";
 //IMPORT AUTHENTICATION
 import { AuthenticationContextProvider } from "./Context/AuthenticationContext";
 
+//IMPORT USER CONTEXT
+import { UserSelectsContextProvider } from "./Context/UserSelectsContext";
+
 axios.defaults.withCredentials = true;
 
 export default function App() {
   return (
     <AuthenticationContextProvider>
-      <Router />
+      <UserSelectsContextProvider>
+        <Router />
+      </UserSelectsContextProvider>
     </AuthenticationContextProvider>
   );
 }

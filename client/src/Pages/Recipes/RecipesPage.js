@@ -13,7 +13,7 @@ export default function RecipePage() {
       <Title>Here's Our Recipes</Title>
       <RecipesWrapper>
         {RecipesList.map((food, i) => {
-          return <FoodImageCard details={food} key={i} />;
+          return <FoodImageCard food={food} key={i} />;
         })}
       </RecipesWrapper>
     </StyledRecipePage>

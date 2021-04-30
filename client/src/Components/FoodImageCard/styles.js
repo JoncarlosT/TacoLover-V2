@@ -1,7 +1,10 @@
 import styled from "styled-components";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import Card from "@material-ui/core/Card";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+} from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 export const NavLink = styled(Link)`
@@ -19,6 +22,8 @@ export const StyledFoodImageCard = styled(Card)`
   }
 `;
 
+export const CardAction = styled(CardActionArea)``;
+
 export const CardImage = styled(CardMedia)`
   height: 340px;
   width: 380px;
@@ -33,6 +38,6 @@ export const CardInfo = styled(CardContent)`
 
 export const CardTitle = styled.div`
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 `;
