@@ -8,7 +8,6 @@ export const StyledSingleRecipe = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 100vh;
 `;
 
 export const TacoSide = styled.div`
