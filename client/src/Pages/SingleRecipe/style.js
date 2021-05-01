@@ -9,7 +9,6 @@ export const StyledSingleRecipe = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   height: 100vh;
-  margin-bottom: 150px;
 `;
 
 export const TacoSide = styled.div`
