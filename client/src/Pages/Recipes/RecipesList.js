@@ -78,12 +78,7 @@ const RecipesList = [
     image: "https://spoonacular.com/recipeImages/633352-312x231.jpg",
     imageType: "jpg",
   },
-  {
-    id: 639413,
-    title: "Cilantro Lime Fish Tacos",
-    image: "https://spoonacular.com/recipeImages/639413-312x231.jpg",
-    imageType: "jpg",
-  },
+
   {
     id: 986003,
     title: "Instant Pot Chicken Tacos",
@@ -114,12 +109,7 @@ const RecipesList = [
     image: "https://spoonacular.com/recipeImages/713957-312x231.jpg",
     imageType: "jpg",
   },
-  {
-    id: 632246,
-    title: "Alouette Crumbled Goat Cheese Provencal Mini Tacos",
-    image: "https://spoonacular.com/recipeImages/632246-312x231.jpg",
-    imageType: "jpg",
-  },
+
   {
     id: 1063645,
     title: "The Secret to Easy Skillet Filet Mignon Steak Tacos",
