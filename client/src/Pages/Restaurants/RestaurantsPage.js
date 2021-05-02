@@ -1,5 +1,39 @@
 import React from "react";
 
 export default function RestaurantsPage() {
-  return <div>RestaurantsPage</div>;
+  return (
+    <div>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+      <h1>Helo</h1>
+    </div>
+  );
 }

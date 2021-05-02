@@ -5,6 +5,9 @@ import styled from "styled-components";
 //IMPORT AUTHENTICATION
 import AuthenticationContext from "./Context/AuthenticationContext";
 
+//IMPORT STYLE
+import { RouterWrapper } from "./styles";
+
 //IMPORT COMPONENTS/
 import Navbar from "./Components/Navbar/Navbar";
 
@@ -25,8 +28,8 @@ export default function Router() {
   // const { selectedRestaurant } = useContext(UserSelectsContext);
 
   return (
-    <RouterWrapper>
-      <BrowserRouter>
+    <BrowserRouter>
+      <RouterWrapper>
         <Navbar />
         <Switch>
           <Route path="/" exact component={LandingPage} />
@@ -39,9 +42,7 @@ export default function Router() {
 
           <Route path="/Login" component={LoginPage} />
         </Switch>
-      </BrowserRouter>
-    </RouterWrapper>
+      </RouterWrapper>
+    </BrowserRouter>
   );
 }
-
-const RouterWrapper = styled.div``;

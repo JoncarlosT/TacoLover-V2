@@ -5,15 +5,8 @@ import bg from "./Assets/Taco-bg.jpg";
 export const GlobalStyle = createGlobalStyle`
     *{margin: 0}
     body{
-        font-family: Nunito;
-        background-image: url(${bg});
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-       
+        font-family: Nunito; 
      }
-    
-
 `;
 
 //DEV LOCALHOST REQUEST
