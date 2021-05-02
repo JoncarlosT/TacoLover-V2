@@ -6,12 +6,6 @@ const RecipesList = [
     imageType: "jpg",
   },
   {
-    id: 511748,
-    title: "Breakfast Tacos",
-    image: "https://spoonacular.com/recipeImages/511748-312x231.jpg",
-    imageType: "jpg",
-  },
-  {
     id: 511707,
     title: "Turkey Kale Tacos",
     image: "https://spoonacular.com/recipeImages/511707-312x231.jpg",

@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, memo } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 //IMPORT FROM GLOBAL PROVIDER
