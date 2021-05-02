@@ -24,6 +24,7 @@ import {
   CommentButton,
   Comment,
   RemoveButton,
+  LoaderWrapper,
 } from "./style";
 
 //IMPORT SELECTED CONTEXT
@@ -34,7 +35,6 @@ import AuthenticationContext from "../../Context/AuthenticationContext";
 
 //IMPORT DEV LOCALHOST
 import DevLocalHost from "../../GlobalProvider";
-import { LoaderWrapper } from "../Landing/styles";
 
 export default function SingleRecipe() {
   const { loggedIn } = useContext(AuthenticationContext);
