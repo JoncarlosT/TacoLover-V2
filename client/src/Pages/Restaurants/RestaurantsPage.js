@@ -60,8 +60,13 @@ export default function RestaurantsPage() {
         })}
 
         {selectedTaco && (
-          <Popup coordinates={selectedTaco.geometry.coordinates}>
-            <h1>hello</h1>
+          <Popup
+            onClose={() => setSelectedTaco(null)}
+            coordinates={selectedTaco.geometry.coordinates}
+          >
+            <h3>{selectedTaco.title}</h3>
+            <p>{selectedTaco.description}</p>
+            <p>By: {selectedTaco.author.userName}</p>
           </Popup>
         )}
       </Map>
