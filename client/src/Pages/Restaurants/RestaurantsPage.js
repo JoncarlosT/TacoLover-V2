@@ -63,7 +63,6 @@ export default function RestaurantsPage() {
 
         {selectedTaco && (
           <Popup
-            onClick={console.log("hit")}
             onClose={() => setSelectedTaco(null)}
             latitude={selectedTaco.geometry.coordinates[1]}
             longitude={selectedTaco.geometry.coordinates[0]}
