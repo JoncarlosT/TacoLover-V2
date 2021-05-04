@@ -20,6 +20,7 @@ export const StyledSingleRecipe = styled.div`
 export const TacoSide = styled.div`
   display: flex;
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
   align-items: center;
 `;
 
@@ -64,6 +65,7 @@ export const Steps = styled.p`
 export const CommentSide = styled.div`
   display: flex;
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
   align-items: center;
 `;
 
