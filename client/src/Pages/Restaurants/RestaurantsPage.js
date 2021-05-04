@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactMap, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import DevLocalHost from "../../GlobalProvider";
@@ -6,10 +6,11 @@ import DevLocalHost from "../../GlobalProvider";
 import axios from "axios";
 
 //IMPORT STYLES
-import { RestaurantsWrapper, TacoIcon } from "./styles";
+import { RestaurantsWrapper, StyledRestaurantsPage, TacoIcon } from "./styles";
+
+import RestaurantsImageCard from "../../Components/RestaurantImageCard/RestaurantImageCard";
 
 export default function RestaurantsPage() {
-  //SETTING UP MAP
   //SETTING UP MAP
   const [viewport, setViewport] = useState({
     latitude: 40.66995747013945,
@@ -35,7 +36,7 @@ export default function RestaurantsPage() {
   const [selectedTaco, setSelectedTaco] = useState(null);
 
   return (
-    <div>
+    <StyledRestaurantsPage>
       <ReactMap
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -73,7 +74,11 @@ export default function RestaurantsPage() {
           </Popup>
         )}
       </ReactMap>
-      <RestaurantsWrapper></RestaurantsWrapper>
-    </div>
+      <RestaurantsWrapper>
+        {restaurants.map((restaurant, i) => {
+          return <RestaurantsImageCard restaurant={restaurant} key={i} />;
+        })}
+      </RestaurantsWrapper>
+    </StyledRestaurantsPage>
   );
 }

@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
+export const StyledRestaurantsPage = styled.div`
+  overflow: hidden;
+`;
+
 export const RestaurantsWrapper = styled.div`
-  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const TacoIcon = styled.img`

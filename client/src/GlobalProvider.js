@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import bg from "./Assets/Taco-bg.jpg";
 
 //GLOBAL STYLES
 export const GlobalStyle = createGlobalStyle`

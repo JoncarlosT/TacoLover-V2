@@ -40,4 +40,5 @@ export const CardTitle = styled.div`
   font-weight: bold;
   font-size: 1.5rem;
   text-align: center;
+  font-family: Nunito;
 `;
