@@ -41,6 +41,8 @@ export default function SingleRecipe() {
   const { selectedFood } = useContext(UserSelectsContext);
 
   //DELETE A REVIEW
+  const [deleted, setDeleted] = useState(false);
+
   const deleteReview = async (id) => {
     await axios.delete(DevLocalHost() + "/review/recipe", {
       data: { _id: id },
@@ -60,7 +62,7 @@ export default function SingleRecipe() {
 
   useEffect(() => {
     getTaco(selectedFood);
-  }, [selectedFood]);
+  }, [selectedFood, deleted]);
 
   //GET REVIEWS
   const [reviews, setReviews] = useState([]);
@@ -75,7 +77,7 @@ export default function SingleRecipe() {
 
   useEffect(() => {
     getReviews();
-  }, [tacoInfo, deleteReview]);
+  }, [tacoInfo]);
 
   //GET CURRENT USER ID
   const [currentUserId, setCurrentUserId] = useState("");
@@ -179,7 +181,12 @@ export default function SingleRecipe() {
                     <div>By: {item.author.userName}</div>
 
                     {currentUserId === item.author._id ? (
-                      <RemoveButton onClick={() => deleteReview(item._id)}>
+                      <RemoveButton
+                        onClick={() => {
+                          deleteReview(item._id);
+                          setDeleted(!deleted);
+                        }}
+                      >
                         Remove
                       </RemoveButton>
                     ) : (
