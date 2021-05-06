@@ -61,10 +61,11 @@ export default function SingleRestaurant() {
   const [reviewsCheck, setReviewsCheck] = useState(false);
 
   const getReviews = async () => {
-    const res = await axios.get(DevLocalHost() + "/restaurants/review", {
-      params: { restaurantId: selectedRestaurant._id },
-    });
-    setReviews(res.data);
+    await axios
+      .get(DevLocalHost() + "/restaurants/review", {
+        params: { restaurantId: selectedRestaurant._id },
+      })
+      .then((res) => setReviews(res.data));
   };
 
   useEffect(() => {
@@ -84,8 +85,7 @@ export default function SingleRestaurant() {
 
     await axios
       .post(DevLocalHost() + "/restaurants/review", review)
-      .then(setUserComment(""), setUserRating(3))
-      .then(setReviewsCheck(!reviewsCheck));
+      .then(getReviews(), setUserComment(""), getReviews());
   };
 
   console.log(reviewsCheck);
@@ -126,13 +126,7 @@ export default function SingleRestaurant() {
               emptySymbol={<EmptyHeart />}
               fullSymbol={<FullHeart />}
             />
-            <CommentButton
-              onClick={() => {
-                postReview();
-              }}
-            >
-              Post
-            </CommentButton>
+            <CommentButton onClick={() => postReview()}>Post</CommentButton>
           </CommentWrapper>
         )}
 
