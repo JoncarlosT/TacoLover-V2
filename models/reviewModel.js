@@ -5,6 +5,7 @@ const reviewSchema = new mongoose.Schema({
   tacoId: Number,
   body: String,
   rating: Number,
+  userName: String,
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: User,

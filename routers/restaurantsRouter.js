@@ -109,9 +109,10 @@ router.post("/review", authentication, async (req, res) => {
 router.get("/review", async (req, res) => {
   try {
     const { restaurantId } = req.query;
-    const restaurant = await Restaurant.findById(restaurantId).populate(
-      "review"
-    );
+    const restaurant = await Restaurant.findById(restaurantId).populate({
+      path: "review",
+      populate: { path: "author" },
+    });
 
     res.send(restaurant.review);
   } catch (err) {
