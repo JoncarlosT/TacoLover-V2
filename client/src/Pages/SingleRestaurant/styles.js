@@ -102,10 +102,13 @@ export const Comment = styled.div`
   color: white;
   width: 30vw;
   text-align: center;
-  span {
-    font-size: 2.5rem;
-    margin: 1px;
-  }
+`;
+
+export const CommentText = styled.div`
+  font-size: 2.5rem;
+  margin: 1px;
+  width: 500px;
+  word-wrap: break-word;
 `;
 
 export const RemoveButton = styled.div`

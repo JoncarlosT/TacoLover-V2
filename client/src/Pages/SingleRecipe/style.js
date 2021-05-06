@@ -14,13 +14,13 @@ export const LoaderWrapper = styled.div`
 export const StyledSingleRecipe = styled.div`
   display: flex;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
   flex-wrap: wrap;
 `;
 
 export const TacoSide = styled.div`
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.5);
   align-items: center;
 `;
 
@@ -65,7 +65,6 @@ export const Steps = styled.p`
 export const CommentSide = styled.div`
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.5);
   align-items: center;
 `;
 
@@ -83,7 +82,6 @@ export const CommentWrapper = styled.form`
 `;
 
 export const UserComment = styled.textarea`
-  background: rgba(0, 0, 0, 0.5);
   color: white;
   width: 400px;
   height: 150px;
@@ -91,6 +89,7 @@ export const UserComment = styled.textarea`
   border-color: white;
   border-radius: 5px;
   font-family: Nunito;
+  background: rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
 `;
 
@@ -134,10 +133,13 @@ export const Comment = styled.div`
   color: white;
   width: 30vw;
   text-align: center;
-  span {
-    font-size: 2.5rem;
-    margin: 1px;
-  }
+`;
+
+export const CommentText = styled.div`
+  font-size: 2.5rem;
+  margin: 1px;
+  width: 500px;
+  word-wrap: break-word;
 `;
 
 export const RemoveButton = styled.div`

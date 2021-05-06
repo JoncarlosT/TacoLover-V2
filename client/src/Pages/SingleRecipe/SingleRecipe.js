@@ -35,6 +35,7 @@ import AuthenticationContext from "../../Context/AuthenticationContext";
 
 //IMPORT DEV LOCALHOST
 import DevLocalHost from "../../GlobalProvider";
+import { CommentText } from "../SingleRestaurant/styles";
 
 export default function SingleRecipe() {
   const { loggedIn } = useContext(AuthenticationContext);
@@ -171,7 +172,7 @@ export default function SingleRecipe() {
               .map((item, i) => {
                 return (
                   <Comment key={i}>
-                    <span>{item.body}</span>
+                    <CommentText>{item.body}</CommentText>
                     <Rating
                       readonly
                       initialRating={item.rating}

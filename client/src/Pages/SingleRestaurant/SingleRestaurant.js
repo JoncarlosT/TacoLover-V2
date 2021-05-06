@@ -25,6 +25,7 @@ import {
   Comment,
   CommentButton,
   RemoveButton,
+  CommentText,
 } from "./styles";
 
 //IMPORT AUTH
@@ -36,12 +37,13 @@ export default function SingleRestaurant() {
   const { selectedRestaurant } = useContext(UserSelectsContext);
 
   //DELETE A REVIEW
-  const [deleted, setDeleted] = useState(false);
 
   const deleteReview = async (id) => {
-    await axios.delete(DevLocalHost() + "/review/recipe", {
-      data: { _id: id },
-    });
+    await axios
+      .delete(DevLocalHost() + "/review/recipe", {
+        data: { _id: id },
+      })
+      .then(await getReviews());
   };
 
   //GET CURRENT USER ID
@@ -58,7 +60,6 @@ export default function SingleRestaurant() {
 
   //GET REVIEWS
   const [reviews, setReviews] = useState([]);
-  const [reviewsCheck, setReviewsCheck] = useState(false);
 
   const getReviews = async () => {
     await axios
@@ -87,8 +88,6 @@ export default function SingleRestaurant() {
       .post(DevLocalHost() + "/restaurants/review", review)
       .then(getReviews(), setUserComment(""), getReviews());
   };
-
-  console.log(reviewsCheck);
 
   return (
     <StyledSingleRestaurant>
@@ -136,7 +135,7 @@ export default function SingleRestaurant() {
           .map((review, i) => {
             return (
               <Comment key={i}>
-                <span>{review.body}</span>
+                <CommentText>{review.body}</CommentText>
                 <Rating
                   readonly
                   initialRating={review.rating}
