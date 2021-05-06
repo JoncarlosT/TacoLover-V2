@@ -7,6 +7,16 @@ import React, { useContext } from "react";
 //IMPORT SELECTED CONTEXT
 import UserSelectsContext from "../../Context/UserSelectsContext";
 
+import {
+  CommentSide,
+  RestaurantSide,
+  StyledSingleRestaurant,
+  RestaurantTitle,
+  RestaurantImg,
+  RestaurantText,
+  CommentHeader,
+} from "./styles";
+
 //IMPORT AUTH
 import AuthenticationContext from "../../Context/AuthenticationContext";
 
@@ -17,27 +27,30 @@ export default function SingleRestaurant() {
   const { loggedIn } = useContext(AuthenticationContext);
   const { selectedRestaurant } = useContext(UserSelectsContext);
 
+  console.log(selectedRestaurant);
   return (
-    <div>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-      <h1>heloo</h1>
-    </div>
+    <StyledSingleRestaurant>
+      <RestaurantSide>
+        <RestaurantTitle>{selectedRestaurant.title}</RestaurantTitle>
+
+        <RestaurantImg
+          src={selectedRestaurant.images}
+          alt={selectedRestaurant.title}
+        />
+
+        <RestaurantText>{selectedRestaurant.title}</RestaurantText>
+        <RestaurantText>{selectedRestaurant.location}</RestaurantText>
+        <RestaurantText>
+          By: {selectedRestaurant.author.userName}
+        </RestaurantText>
+      </RestaurantSide>
+      <CommentSide>
+        {loggedIn ? (
+          <CommentHeader>Leave a Comment</CommentHeader>
+        ) : (
+          <CommentHeader>Sign In To Comment</CommentHeader>
+        )}
+      </CommentSide>
+    </StyledSingleRestaurant>
   );
 }
