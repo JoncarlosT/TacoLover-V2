@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ReactMap, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import DevLocalHost from "../../GlobalProvider";
@@ -6,11 +6,21 @@ import DevLocalHost from "../../GlobalProvider";
 import axios from "axios";
 
 //IMPORT STYLES
-import { RestaurantsWrapper, StyledRestaurantsPage, TacoIcon } from "./styles";
+import {
+  CreateRestaurantButton,
+  CreateRestaurantWrapper,
+  RestaurantsWrapper,
+  StyledRestaurantsPage,
+  TacoIcon,
+} from "./styles";
+
+import AuthenticationContext from "../../Context/AuthenticationContext";
 
 import RestaurantsImageCard from "../../Components/RestaurantImageCard/RestaurantImageCard";
 
 export default function RestaurantsPage() {
+  const { loggedIn } = useContext(AuthenticationContext);
+
   //SETTING UP MAP
   const [viewport, setViewport] = useState({
     latitude: 40.66995747013945,
@@ -79,6 +89,14 @@ export default function RestaurantsPage() {
           return <RestaurantsImageCard restaurant={restaurant} key={i} />;
         })}
       </RestaurantsWrapper>
+
+      {loggedIn && (
+        <CreateRestaurantWrapper>
+          <CreateRestaurantButton to="/CreateRestaurant/">
+            ADD RESTAURANT
+          </CreateRestaurantButton>
+        </CreateRestaurantWrapper>
+      )}
     </StyledRestaurantsPage>
   );
 }

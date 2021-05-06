@@ -39,11 +39,9 @@ export default function SingleRestaurant() {
   //DELETE A REVIEW
 
   const deleteReview = async (id) => {
-    await axios
-      .delete(DevLocalHost() + "/review/recipe", {
-        data: { _id: id },
-      })
-      .then(await getReviews());
+    await axios.delete(DevLocalHost() + "/review/recipe", {
+      data: { _id: id },
+    });
   };
 
   //GET CURRENT USER ID

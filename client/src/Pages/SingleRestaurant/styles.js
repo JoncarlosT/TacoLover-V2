@@ -15,6 +15,7 @@ export const RestaurantSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 30px;
 `;
 
 export const RestaurantTitle = styled.h1`
@@ -35,6 +36,7 @@ export const RestaurantText = styled.h1`
 export const CommentSide = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 30px;
   align-items: center;
 `;
 

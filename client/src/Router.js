@@ -17,6 +17,7 @@ import SingleRecipe from "./Pages/SingleRecipe/SingleRecipe";
 import RestaurantsPage from "./Pages/Restaurants/RestaurantsPage";
 import LoginPage from "./Pages/Login/LoginPage";
 import SingleRestaurant from "./Pages/SingleRestaurant/SingleRestaurant";
+import CreateRestaurant from "./Pages/CreateRestaurant/CreateRestaurant";
 
 export default function Router() {
   const { loggedIn } = useContext(AuthenticationContext);
@@ -36,6 +37,10 @@ export default function Router() {
           path={`/Restaurant/${selectedRestaurant._id}`}
           component={SingleRestaurant}
         />
+
+        {loggedIn && (
+          <Route path="/CreateRestaurant/" component={CreateRestaurant} />
+        )}
 
         <Route path="/Recipes" component={RecipesPage} />
 
