@@ -13,22 +13,25 @@ import {
   TacoLoverText,
   ImageCardWrapper,
   DownArrow,
+  WelcomeWrapper,
 } from "./styles";
 
 export default function LandingPage() {
   return (
     <StyledLandingPage>
-      <Scroll to="body" smooth={true}>
-        <WelcomeHeader>
-          <WelcomeText>Welcome To</WelcomeText>
-          <TacoLoverText>
-            <span>Ta</span>
-            co
-            <span>Lover</span>
-          </TacoLoverText>
-          <DownArrow />
-        </WelcomeHeader>
-      </Scroll>
+      <WelcomeWrapper>
+        <Scroll to="body" smooth={true}>
+          <WelcomeHeader>
+            <WelcomeText>Welcome To</WelcomeText>
+            <TacoLoverText>
+              <span>Ta</span>
+              co
+              <span>Lover</span>
+            </TacoLoverText>
+            <DownArrow />
+          </WelcomeHeader>
+        </Scroll>
+      </WelcomeWrapper>
       <ImageCardWrapper id="body">
         {LandingPageInfo.map((info, i) => {
           return <ImageCard details={info} key={i} />;

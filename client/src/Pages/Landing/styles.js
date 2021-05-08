@@ -5,15 +5,22 @@ export const StyledLandingPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+`;
+
+export const WelcomeWrapper = styled.div`
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const WelcomeHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
   cursor: pointer;
-
   :hover {
     transform: translateY(10px);
   }
@@ -49,6 +56,7 @@ export const ImageCardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 300px;
-  margin-bottom: 200px;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 150px;
 `;
