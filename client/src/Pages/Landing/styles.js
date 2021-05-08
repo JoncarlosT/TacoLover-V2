@@ -30,6 +30,9 @@ export const WelcomeText = styled.h1`
   color: white;
   font-size: 5rem;
   text-align: center;
+  @media (max-width: 420px) {
+    font-size: 15vw;
+  }
 `;
 
 export const TacoLoverText = styled.h1`
@@ -40,6 +43,10 @@ export const TacoLoverText = styled.h1`
   }
   span:nth-child(2) {
     color: green;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 15vw;
   }
 `;
 

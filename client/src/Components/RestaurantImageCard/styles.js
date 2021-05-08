@@ -14,6 +14,10 @@ export const StyledRestaurantImageCard = styled(Card)`
   && {
     background: rgba(0, 0, 0, 0.5);
   }
+
+  @media (max-width: 380px) {
+    width: 90vw;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -25,7 +29,6 @@ export const CardAction = styled(CardActionArea)``;
 
 export const CardImage = styled(CardMedia)`
   height: 340px;
-  width: 380px;
 `;
 
 export const CardInfo = styled(CardContent)`

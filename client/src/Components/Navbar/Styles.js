@@ -23,7 +23,7 @@ export const Logo = styled(Link)`
   }
 
   @media screen and (max-width: 890px) {
-    font-size: 6vw;
+    font-size: 9vw;
   } ;
 `;
 

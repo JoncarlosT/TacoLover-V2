@@ -17,11 +17,14 @@ export const StyledImageCard = styled(Card)`
   && {
     background: rgba(0, 0, 0, 0.5);
   }
+
+  @media (max-width: 380px) {
+    width: 90vw;
+  }
 `;
 
 export const CardImage = styled(CardMedia)`
   height: 340px;
-  width: 380px;
 `;
 
 export const CardInfo = styled(CardContent)`
