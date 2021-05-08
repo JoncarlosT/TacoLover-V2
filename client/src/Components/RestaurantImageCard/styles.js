@@ -10,7 +10,8 @@ import { Link } from "react-router-dom";
 export const StyledRestaurantImageCard = styled(Card)`
   height: 480px;
   width: 380px;
-  margin: 40px;
+  margin: 30px;
+
   && {
     background: rgba(0, 0, 0, 0.5);
   }
