@@ -7,6 +7,7 @@ const restaurantSchema = new mongoose.Schema({
   images: String,
   description: String,
   location: String,
+  contact: String,
   geometry: {
     type: {
       enum: ["Point"],

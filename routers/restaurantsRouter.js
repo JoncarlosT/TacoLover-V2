@@ -10,10 +10,10 @@ const { cloudinary } = require("../cloudinary/index");
 //ADDS RESTAURANTS TO SERVER
 router.post("/add", authentication, async (req, res) => {
   try {
-    const { title, images, description, location } = req.body;
+    const { title, images, description, location, contact } = req.body;
 
     //VALIDATIONS
-    if (!title || !images || !description || !location)
+    if (!title || !images || !description || !location || !contact)
       return res
         .status(400)
         .json({ errorMessage: "Please Enter all Required Fields" });
@@ -32,13 +32,12 @@ router.post("/add", authentication, async (req, res) => {
       })
     );
 
-    // console.log(uploadedRes);
-
     const newRestaurant = new Restaurant({
       title,
       images: uploadedRes.url,
       description,
       location,
+      contact,
       geometry: geoData.body.features[0].geometry,
       author: req.user,
     });
