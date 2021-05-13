@@ -66,7 +66,7 @@ export default function CreateRestaurant() {
     <StyledCreateRestaurant>
       <RestaurantForm>
         <RestaurantFormInput
-          placeholder="Restaurant Name"
+          placeholder="Name"
           value={title}
           type="Text"
           label="Text"
@@ -89,7 +89,7 @@ export default function CreateRestaurant() {
           <img src={preview} alt="chosen" style={{ height: "300px" }} />
         )}
         <RestaurantFormInput
-          placeholder="Where Can We Find Them?"
+          placeholder="Address"
           value={location}
           type="Text"
           label="Text"
@@ -97,7 +97,7 @@ export default function CreateRestaurant() {
           onKeyPress={(e) => EnterSubmit(e)}
         />
         <RestaurantFormInput
-          placeholder="How Can we Talk To Them?"
+          placeholder="Contact"
           value={contact}
           type="Text"
           label="Text"

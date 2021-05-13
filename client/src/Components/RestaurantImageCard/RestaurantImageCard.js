@@ -26,7 +26,6 @@ export default function RestaurantImageCard({ restaurant }) {
     <StyledRestaurantImageCard>
       <CardAction onClick={() => setSelectedRestaurant(restaurant)}>
         <NavLink
-          // to={`/Restaurants/${restaurant._id}`}
           to={`/Restaurant/${restaurant._id}`}
           onClick={() => windowReset()}
         >
