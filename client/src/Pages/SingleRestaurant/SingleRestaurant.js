@@ -97,8 +97,8 @@ export default function SingleRestaurant() {
           alt={selectedRestaurant.title}
         />
 
-        <RestaurantText>{selectedRestaurant.title}</RestaurantText>
         <RestaurantText>{selectedRestaurant.location}</RestaurantText>
+        <RestaurantText>{selectedRestaurant.contact}</RestaurantText>
         <RestaurantText>
           By: {selectedRestaurant.author.userName}
         </RestaurantText>

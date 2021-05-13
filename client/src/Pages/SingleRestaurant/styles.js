@@ -31,6 +31,8 @@ export const RestaurantImg = styled.img`
 
 export const RestaurantText = styled.h1`
   color: white;
+  text-align: center;
+  margin: 5px;
 `;
 
 export const CommentSide = styled.div`
