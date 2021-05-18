@@ -18,6 +18,8 @@ import AuthenticationContext from "../../Context/AuthenticationContext";
 
 import RestaurantsImageCard from "../../Components/RestaurantImageCard/RestaurantImageCard";
 
+import RestaurantMapInfo from "../../Components/RestaurantMapInfo/RestaurantMapInfo";
+
 export default function RestaurantsPage() {
   const { loggedIn } = useContext(AuthenticationContext);
 
@@ -44,6 +46,10 @@ export default function RestaurantsPage() {
   }, []);
 
   const [selectedTaco, setSelectedTaco] = useState(null);
+
+  const test = () => {
+    console.log("hit");
+  };
 
   return (
     <StyledRestaurantsPage>
@@ -74,13 +80,12 @@ export default function RestaurantsPage() {
 
         {selectedTaco && (
           <Popup
+            closeOnClick={false}
             onClose={() => setSelectedTaco(null)}
             latitude={selectedTaco.geometry.coordinates[1]}
             longitude={selectedTaco.geometry.coordinates[0]}
           >
-            <h3>{selectedTaco.title}</h3>
-            <p>{selectedTaco.description}</p>
-            <p>By: {selectedTaco.author.userName}</p>
+            <RestaurantMapInfo info={selectedTaco} />
           </Popup>
         )}
       </ReactMap>
