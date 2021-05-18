@@ -16,6 +16,8 @@ export const StyledSingleRecipe = styled.div`
   justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   flex-wrap: wrap;
+  overflow: hidden;
+  width: 100vw;
 `;
 
 export const TacoSide = styled.div`
@@ -27,6 +29,7 @@ export const TacoSide = styled.div`
 export const TacoTitle = styled.h1`
   color: white;
   font-size: 3rem;
+  text-align: center;
   margin: 20px;
 `;
 
@@ -39,10 +42,14 @@ export const TacoAndIngredientsWrapper = styled.div`
 
 export const TacoImage = styled.img`
   margin: 20px;
+  @media (max-width: 420px) {
+    width: 90vw;
+  }
 `;
 
 export const TacoIngredientsWrapper = styled.div`
   display: flex;
+  text-align: center;
   flex-direction: column;
 `;
 
@@ -55,6 +62,9 @@ export const TacoIngredients = styled.p`
 export const StepsWrapper = styled.div`
   width: 60vw;
   margin: 20px;
+  @media (max-width: 420px) {
+    width: 90vw;
+  }
 `;
 
 export const Steps = styled.p`
@@ -71,6 +81,7 @@ export const CommentSide = styled.div`
 export const CommentHeader = styled.h1`
   color: white;
   font-size: 3rem;
+  text-align: center;
   margin: 20px;
 `;
 
@@ -82,14 +93,13 @@ export const CommentWrapper = styled.form`
 `;
 
 export const UserComment = styled.textarea`
+  background: rgba(0, 0, 0, 0.5);
   color: white;
-  width: 400px;
   height: 150px;
   font-size: 2rem;
   border-color: white;
   border-radius: 5px;
   font-family: Nunito;
-  background: rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
 `;
 
@@ -118,7 +128,6 @@ export const CommentButton = styled.div`
   text-align: center;
   transition: all 0.2s;
   cursor: pointer;
-
   :hover {
     color: #000000;
     background-color: #ffffff;

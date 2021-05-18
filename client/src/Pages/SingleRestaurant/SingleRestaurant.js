@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useState } from "react";
 // import Loader from "react-loader-spinner";
 import Rating from "react-rating";
 
+import { useHistory } from "react-router-dom";
+
 //IMPORT DEV LOCALHOST
 import DevLocalHost from "../../GlobalProvider";
 
@@ -26,6 +28,7 @@ import {
   CommentButton,
   RemoveButton,
   CommentText,
+  DeleteRestaurantButton,
 } from "./styles";
 
 //IMPORT AUTH
@@ -35,6 +38,20 @@ import axios from "axios";
 export default function SingleRestaurant() {
   const { loggedIn } = useContext(AuthenticationContext);
   const { selectedRestaurant } = useContext(UserSelectsContext);
+
+  const history = useHistory();
+
+  //DELETE RESTAURANT
+  const deleteRestaurant = async () => {
+    await axios
+      .delete(DevLocalHost() + "/restaurants", {
+        data: {
+          _id: selectedRestaurant._id,
+          images: selectedRestaurant.images,
+        },
+      })
+      .then(history.push("/"));
+  };
 
   //DELETE A REVIEW
 
@@ -102,6 +119,12 @@ export default function SingleRestaurant() {
         <RestaurantText>
           By: {selectedRestaurant.author.userName}
         </RestaurantText>
+
+        {currentUserId === selectedRestaurant.author._id && (
+          <DeleteRestaurantButton onClick={() => deleteRestaurant()}>
+            Delete
+          </DeleteRestaurantButton>
+        )}
       </RestaurantSide>
       <CommentSide>
         {loggedIn ? (
@@ -139,6 +162,7 @@ export default function SingleRestaurant() {
                   initialRating={review.rating}
                   emptySymbol={<EmptyHeart />}
                   fullSymbol={<FullHeart />}
+                  style={{ width: "100vw" }}
                 />
                 <div>By: {review.author.userName}</div>
 

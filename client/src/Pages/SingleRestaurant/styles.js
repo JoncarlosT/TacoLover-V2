@@ -9,6 +9,8 @@ export const StyledSingleRestaurant = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 100vw;
 `;
 
 export const RestaurantSide = styled.div`
@@ -16,6 +18,22 @@ export const RestaurantSide = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 30px;
+`;
+
+export const DeleteRestaurantButton = styled.div`
+  display: flex;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin-top: 20px;
+  border-radius: 0.12em;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  :hover {
+    color: #000000;
+    background-color: #ffffff;
+  }
 `;
 
 export const RestaurantTitle = styled.h1`
@@ -50,6 +68,7 @@ export const CommentHeader = styled.h1`
   color: white;
   font-size: 2rem;
   margin: 20px;
+  text-align: center;
 `;
 
 export const CommentWrapper = styled.form`
@@ -116,6 +135,10 @@ export const CommentText = styled.div`
   margin: 1px;
   width: 500px;
   word-wrap: break-word;
+
+  @media (max-width: 420px) {
+    width: 90vw;
+  }
 `;
 
 export const RemoveButton = styled.div`

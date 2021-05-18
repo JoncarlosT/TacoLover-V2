@@ -47,10 +47,6 @@ export default function RestaurantsPage() {
 
   const [selectedTaco, setSelectedTaco] = useState(null);
 
-  const test = () => {
-    console.log("hit");
-  };
-
   return (
     <StyledRestaurantsPage>
       <ReactMap

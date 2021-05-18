@@ -177,6 +177,7 @@ export default function SingleRecipe() {
                       readonly
                       initialRating={item.rating}
                       emptySymbol={<EmptyHeart />}
+                      style={{ width: "100vw" }}
                       fullSymbol={<FullHeart />}
                     />
                     <div>By: {item.author.userName}</div>

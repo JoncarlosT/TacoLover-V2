@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import {
@@ -8,6 +8,7 @@ import {
   RestaurantFormInputDesc,
   RestaurantFormInputImage,
   AddRestaurantButton,
+  RestaurantFormInputImageButton,
 } from "./styles";
 
 import DevLocalHost from "../../GlobalProvider";
@@ -20,12 +21,10 @@ export default function CreateRestaurant() {
   const [preview, setPreview] = useState();
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
-
+  const fileInput = useRef(null);
   const history = useHistory();
 
-  const createRestaurant = async (event) => {
-    event.preventDefault();
-
+  const createRestaurant = async () => {
     const restaurant = {
       title,
       images,
@@ -64,7 +63,7 @@ export default function CreateRestaurant() {
 
   return (
     <StyledCreateRestaurant>
-      <RestaurantForm>
+      <RestaurantForm onSubmit={() => createRestaurant()}>
         <RestaurantFormInput
           placeholder="Name"
           value={title}
@@ -72,11 +71,21 @@ export default function CreateRestaurant() {
           label="Text"
           onChange={(e) => setTitle(e.target.value)}
           onKeyPress={(e) => EnterSubmit(e)}
+          required
         />
 
+        <RestaurantFormInputImageButton
+          onClick={() => fileInput.current.click()}
+        >
+          Choose File
+        </RestaurantFormInputImageButton>
+
         <RestaurantFormInputImage
+          required
+          ref={fileInput}
           type="file"
           name="image"
+          style={{ display: "none" }}
           onChange={(e) => {
             setImages(null);
             setPreview(null);
@@ -91,6 +100,7 @@ export default function CreateRestaurant() {
         <RestaurantFormInput
           placeholder="Address"
           value={location}
+          required
           type="Text"
           label="Text"
           onChange={(e) => setLocation(e.target.value)}
@@ -99,6 +109,7 @@ export default function CreateRestaurant() {
         <RestaurantFormInput
           placeholder="Contact"
           value={contact}
+          required
           type="Text"
           label="Text"
           onChange={(e) => setContact(e.target.value)}
@@ -108,11 +119,13 @@ export default function CreateRestaurant() {
           placeholder="Tell Us About Them"
           value={description}
           type="Text"
+          required
           label="Text"
           onChange={(e) => setDescription(e.target.value)}
           onKeyPress={(e) => EnterSubmit(e)}
         />
-        <AddRestaurantButton type="submit" onClick={(e) => createRestaurant(e)}>
+        <AddRestaurantButton type="submit">
+          {/* onClick={(e) => createRestaurant(e)} */}
           Add Restaurant
         </AddRestaurantButton>
       </RestaurantForm>
