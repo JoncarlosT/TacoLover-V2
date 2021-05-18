@@ -27,6 +27,10 @@ export const RestaurantTitle = styled.h1`
 export const RestaurantImg = styled.img`
   height: 400px;
   width: 400px;
+
+  @media (max-width: 420px) {
+    width: 90vw;
+  }
 `;
 
 export const RestaurantText = styled.h1`
@@ -44,7 +48,7 @@ export const CommentSide = styled.div`
 
 export const CommentHeader = styled.h1`
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 20px;
 `;
 
@@ -58,7 +62,6 @@ export const CommentWrapper = styled.form`
 export const UserComment = styled.textarea`
   background: rgba(0, 0, 0, 0.5);
   color: white;
-  width: 400px;
   height: 150px;
   font-size: 2rem;
   border-color: white;
