@@ -27,6 +27,10 @@ export const LoginInput = styled.input`
   border-radius: 25px;
   border: none;
   width: 250px;
+
+  :focus {
+    outline: none;
+  }
 `;
 
 export const LoginButton = styled.div`

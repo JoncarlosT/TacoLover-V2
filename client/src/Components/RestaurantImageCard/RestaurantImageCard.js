@@ -35,8 +35,9 @@ export default function RestaurantImageCard({ restaurant }) {
             src={restaurant.images}
           />
           <CardInfo>
+            {console.log(restaurant)}
             <CardTitle>{restaurant.title}</CardTitle>
-            <CardDescription>{restaurant.description}</CardDescription>
+            <CardDescription>{restaurant.location}</CardDescription>
             <CardAuthor>By: {restaurant.author.userName} </CardAuthor>
           </CardInfo>
         </NavLink>

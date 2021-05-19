@@ -47,7 +47,7 @@ export const CardTitle = styled.div`
 `;
 
 export const CardDescription = styled.p`
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-family: Nunito;
   text-align: center;
 `;

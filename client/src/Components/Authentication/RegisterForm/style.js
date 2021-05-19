@@ -22,6 +22,10 @@ export const RegisterInput = styled.input`
   border-radius: 25px;
   border: none;
   width: 250px;
+
+  :focus {
+    outline: none;
+  }
 `;
 
 export const RegisterButton = styled.div`

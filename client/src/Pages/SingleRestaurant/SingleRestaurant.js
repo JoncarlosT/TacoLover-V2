@@ -29,6 +29,8 @@ import {
   RemoveButton,
   CommentText,
   DeleteRestaurantButton,
+  RestaurantDesc,
+  RestaurantSubTitle,
 } from "./styles";
 
 //IMPORT AUTH
@@ -113,9 +115,12 @@ export default function SingleRestaurant() {
           src={selectedRestaurant.images}
           alt={selectedRestaurant.title}
         />
-
+        <RestaurantSubTitle>Address</RestaurantSubTitle>
         <RestaurantText>{selectedRestaurant.location}</RestaurantText>
+        <RestaurantSubTitle>Contact</RestaurantSubTitle>
         <RestaurantText>{selectedRestaurant.contact}</RestaurantText>
+        <RestaurantSubTitle>Description</RestaurantSubTitle>
+        <RestaurantDesc>{selectedRestaurant.description}</RestaurantDesc>
         <RestaurantText>
           By: {selectedRestaurant.author.userName}
         </RestaurantText>

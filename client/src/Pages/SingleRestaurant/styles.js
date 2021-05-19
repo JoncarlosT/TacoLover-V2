@@ -51,10 +51,26 @@ export const RestaurantImg = styled.img`
   }
 `;
 
+export const RestaurantSubTitle = styled.h1`
+  color: white;
+  text-decoration: underline;
+  font-size: 3rem;
+`;
+
 export const RestaurantText = styled.h1`
   color: white;
   text-align: center;
   margin: 5px;
+`;
+export const RestaurantDesc = styled.h1`
+  color: white;
+  text-align: center;
+  margin: 5px;
+  width: 1000px;
+
+  @media (max-width: 420px) {
+    width: 90vw;
+  }
 `;
 
 export const CommentSide = styled.div`
