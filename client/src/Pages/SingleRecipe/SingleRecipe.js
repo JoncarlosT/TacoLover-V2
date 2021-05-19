@@ -45,9 +45,11 @@ export default function SingleRecipe() {
   const [deleted, setDeleted] = useState(false);
 
   const deleteReview = async (id) => {
-    await axios.delete(DevLocalHost() + "/review/recipe", {
-      data: { _id: id },
-    });
+    await axios
+      .delete(DevLocalHost() + "/review/recipe", {
+        data: { _id: id },
+      })
+      .then(getReviews());
   };
 
   //TACO LIST
@@ -78,7 +80,7 @@ export default function SingleRecipe() {
 
   useEffect(() => {
     getReviews();
-  }, [tacoInfo]);
+  });
 
   //GET CURRENT USER ID
   const [currentUserId, setCurrentUserId] = useState("");

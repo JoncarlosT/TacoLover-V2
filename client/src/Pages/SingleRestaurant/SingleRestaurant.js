@@ -58,9 +58,11 @@ export default function SingleRestaurant() {
   //DELETE A REVIEW
 
   const deleteReview = async (id) => {
-    await axios.delete(DevLocalHost() + "/review/recipe", {
-      data: { _id: id },
-    });
+    await axios
+      .delete(DevLocalHost() + "/review/recipe", {
+        data: { _id: id },
+      })
+      .then(getReviews());
   };
 
   //GET CURRENT USER ID
@@ -88,7 +90,7 @@ export default function SingleRestaurant() {
 
   useEffect(() => {
     getReviews();
-  }, []);
+  });
 
   //POST REVIEW
   const [userComment, setUserComment] = useState("");
