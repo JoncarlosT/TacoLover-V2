@@ -19,6 +19,9 @@ import LoginPage from "./Pages/Login/LoginPage";
 import SingleRestaurant from "./Pages/SingleRestaurant/SingleRestaurant";
 import CreateRestaurant from "./Pages/CreateRestaurant/CreateRestaurant";
 
+import styled from "styled-components";
+import BG from "./Assets/Taco-bg.jpg";
+
 export default function Router() {
   const { loggedIn } = useContext(AuthenticationContext);
 
@@ -27,27 +30,36 @@ export default function Router() {
 
   return (
     <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route path="/" exact component={LandingPage} />
+      <Background>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={LandingPage} />
 
-        <Route path="/Restaurants" component={RestaurantsPage} />
+          <Route path="/Restaurants" component={RestaurantsPage} />
 
-        <Route
-          path={`/Restaurant/${selectedRestaurant._id}`}
-          component={SingleRestaurant}
-        />
+          <Route
+            path={`/Restaurant/${selectedRestaurant._id}`}
+            component={SingleRestaurant}
+          />
 
-        {loggedIn && (
-          <Route path="/CreateRestaurant/" component={CreateRestaurant} />
-        )}
+          {loggedIn && (
+            <Route path="/CreateRestaurant/" component={CreateRestaurant} />
+          )}
 
-        <Route path="/Recipes" component={RecipesPage} />
+          <Route path="/Recipes" component={RecipesPage} />
 
-        <Route path={`/Recipe/${selectedFood.id}`} component={SingleRecipe} />
+          <Route path={`/Recipe/${selectedFood.id}`} component={SingleRecipe} />
 
-        <Route path="/Login" component={LoginPage} />
-      </Switch>
+          <Route path="/Login" component={LoginPage} />
+        </Switch>
+      </Background>
     </BrowserRouter>
   );
 }
+
+const Background = styled.div`
+  background-image: url(${BG});
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden;
+`;
