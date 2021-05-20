@@ -56,7 +56,7 @@ router.post("/add", authentication, async (req, res) => {
 
 An interactive map that shows restaurant locations
 
-![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/Tacolover-%201600px.PNG)
+![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/TacoLover%20-%20Map.gif)
 
 ```javascript
 <ReactMap
