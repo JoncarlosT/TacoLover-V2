@@ -21,16 +21,36 @@ Website [Live](https://tacolover-1.herokuapp.com/) here
 - Material-UI - Front-end Modules and Icons
 - Mapbox - Interactive world map
 - Styled-components - Adding readability and CSS functionality
+- Bcryptjs - Security
+- Jsonwebtoken - User authentication
 
 ## API's
 
 - Spoonacular - List of Tacos Recipes
 
-## Features
+# Features
 
-User Authentication
+## User Authentication
+
+Users can login and register accounts
 
 ![alt-text-1](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/JS.png) ![alt-text-2](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/jsx.png)
+
+## "User-Proof"
+
+Back-end validations to ensure correct data inputs
+
+```javascript
+router.post("/add", authentication, async (req, res) => {
+  try {
+    const { title, images, description, location, contact } = req.body;
+
+    //VALIDATIONS
+    if (!title || !images || !description || !location || !contact)
+      return res
+        .status(400)
+        .json({ errorMessage: "Please Enter all Required Fields" });
+```
 
 # User Interface
 
