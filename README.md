@@ -116,3 +116,8 @@ A fully responsive and mobile friendly interface
 ### Width - 480px
 
 ![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/Tacolover-%20480px.PNG)
+
+# Credit
+
+All recipes were from Spoonacular api
+All images were used from pexels.com
