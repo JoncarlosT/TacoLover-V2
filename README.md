@@ -14,10 +14,15 @@ Website [Live](https://tacolover-1.herokuapp.com/) here
 
 ## Stack
 
-- Frontend - React.js
-- Backend - MongoDB, Express, Node
+- Front-end - React.js
+- Back-end - MongoDB, Express, Node
 
 ## Technologies
 
-- Blender - Contruction of the objects and animations.
-- Firebase - Host highscores.
+- Cloudinary - Cloud storage for images
+- Material-UI - Front-end Module and Icons
+- Mapbox - Interactive world map
+
+## API's
+
+- Spoonacular - List of Tacos Recipes
