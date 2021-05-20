@@ -52,6 +52,51 @@ router.post("/add", authentication, async (req, res) => {
         .json({ errorMessage: "Please Enter all Required Fields" });
 ```
 
+## Interactive Map
+
+An interactive map that shows restaurant locations
+
+![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/Tacolover-%201600px.PNG)
+
+```javascript
+<ReactMap
+  {...viewport}
+  mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+  mapStyle="mapbox://styles/jc1280/ckm16fh6i9x6n17o0pm4r5091"
+  onViewportChange={(viewport) => setViewport(viewport)}
+>
+  {restaurants.map((restaurant, i) => {
+    return (
+      <Marker
+        key={i}
+        latitude={restaurant.geometry.coordinates[1]}
+        longitude={restaurant.geometry.coordinates[0]}
+      >
+        <TacoIcon
+          onClick={(e) => {
+            e.preventDefault();
+            setSelectedTaco(restaurant);
+          }}
+          src="/Assets/Taco-svg.png"
+          alt="taco"
+        />
+      </Marker>
+    );
+  })}
+
+  {selectedTaco && (
+    <Popup
+      closeOnClick={false}
+      onClose={() => setSelectedTaco(null)}
+      latitude={selectedTaco.geometry.coordinates[1]}
+      longitude={selectedTaco.geometry.coordinates[0]}
+    >
+      <RestaurantMapInfo info={selectedTaco} />
+    </Popup>
+  )}
+</ReactMap>
+```
+
 # User Interface
 
 A fully responsive and mobile friendly interface
