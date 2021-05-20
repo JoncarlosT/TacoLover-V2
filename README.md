@@ -7,3 +7,17 @@ Tacolover is a full CRUD web app, that focuses on your love for tacos. Locations
 Website [Live](https://tacolover-1.herokuapp.com/) here
 
 ![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/TacoLover-%20Landing%20Page.gif)
+
+# Technologies
+
+### TacoLover's Architecture and Technologies:
+
+## Stack
+
+- Frontend - React.js
+- Backend - MongoDB, Express, Node
+
+## Technologies
+
+- Blender - Contruction of the objects and animations.
+- Firebase - Host highscores.
