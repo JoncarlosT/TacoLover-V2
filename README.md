@@ -6,4 +6,5 @@ Tacolover is a full CRUD web app, that focuses on your love for tacos. Locations
 
 Website [Live](https://tacolover-1.herokuapp.com/) here
 
-![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/TacoLover-%20Landing%20Page.gif)
+![alt text]
+(https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/TacoLover-%20Landing%20Page.gif)
