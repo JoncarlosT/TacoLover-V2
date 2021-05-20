@@ -28,7 +28,7 @@ Website [Live](https://tacolover-1.herokuapp.com/) here
 
 ## Features
 
-![alt-text-1](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/User%20login%20JSX.PNG) ![alt-text-2](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/User%20login%20JS.PNG)
+![alt-text-1](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/JS.png) ![alt-text-2](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/jsx.png)
 
 # User Interface
 
