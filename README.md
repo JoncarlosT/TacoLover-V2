@@ -26,6 +26,10 @@ Website [Live](https://tacolover-1.herokuapp.com/) here
 
 - Spoonacular - List of Tacos Recipes
 
+## Features
+
+![alt-text-1](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/User%20login%20JSX.PNG) ![alt-text-2](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/User%20login%20JS.PNG)
+
 # User Interface
 
 A fully responsive and mobile friendly interface
