@@ -62,7 +62,8 @@ export default function SingleRestaurant() {
       .delete(DevLocalHost() + "/review/recipe", {
         data: { _id: id },
       })
-      .then(getReviews());
+      .then(updateReviews())
+      .then(updateReviews());
   };
 
   //GET CURRENT USER ID
@@ -80,17 +81,25 @@ export default function SingleRestaurant() {
   //GET REVIEWS
   const [reviews, setReviews] = useState([]);
 
-  const getReviews = async () => {
+  useEffect(() => {
+    const getReviews = async () => {
+      await axios
+        .get(DevLocalHost() + "/restaurants/review", {
+          params: { restaurantId: selectedRestaurant._id },
+        })
+        .then((res) => setReviews(res.data));
+    };
+
+    getReviews();
+  }, [selectedRestaurant._id]);
+
+  const updateReviews = async () => {
     await axios
       .get(DevLocalHost() + "/restaurants/review", {
         params: { restaurantId: selectedRestaurant._id },
       })
       .then((res) => setReviews(res.data));
   };
-
-  useEffect(() => {
-    getReviews();
-  });
 
   //POST REVIEW
   const [userComment, setUserComment] = useState("");
@@ -105,7 +114,9 @@ export default function SingleRestaurant() {
 
     await axios
       .post(DevLocalHost() + "/restaurants/review", review)
-      .then(getReviews(), setUserComment(""), getReviews());
+      .then(setUserComment(""))
+      .then(updateReviews())
+      .then(updateReviews());
   };
 
   return (

@@ -49,7 +49,8 @@ export default function SingleRecipe() {
       .delete(DevLocalHost() + "/review/recipe", {
         data: { _id: id },
       })
-      .then(getReviews());
+      .then(updateReviews())
+      .then(updateReviews());
   };
 
   //TACO LIST
@@ -65,22 +66,30 @@ export default function SingleRecipe() {
 
   useEffect(() => {
     getTaco(selectedFood);
-  }, [selectedFood, deleted]);
+  }, [selectedFood]);
 
   //GET REVIEWS
   const [reviews, setReviews] = useState([]);
 
-  const getReviews = async () => {
+  useEffect(() => {
+    const getReviews = async () => {
+      await axios
+        .get(DevLocalHost() + "/review/recipe", {
+          params: { tacoId: tacoInfo.id },
+        })
+        .then((res) => setReviews(res.data));
+    };
+
+    getReviews();
+  }, [tacoInfo.id]);
+
+  const updateReviews = async () => {
     await axios
       .get(DevLocalHost() + "/review/recipe", {
         params: { tacoId: tacoInfo.id },
       })
       .then((res) => setReviews(res.data));
   };
-
-  useEffect(() => {
-    getReviews();
-  });
 
   //GET CURRENT USER ID
   const [currentUserId, setCurrentUserId] = useState("");
@@ -104,10 +113,14 @@ export default function SingleRecipe() {
       body: userComment,
       rating: userRating,
     };
-    await axios.post(DevLocalHost() + "/review/recipe", review);
-    setUserComment("");
-    setUserRating(3);
-    getReviews();
+    await axios
+      .post(DevLocalHost() + "/review/recipe", review)
+      .then(setUserComment(""))
+      .then(setUserRating(3))
+      .then(updateReviews())
+      .then(updateReviews());
+
+    // updateReviews();
   };
 
   return (
