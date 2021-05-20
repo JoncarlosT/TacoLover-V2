@@ -20,6 +20,7 @@ Website [Live](https://tacolover-1.herokuapp.com/) here
 - Cloudinary - Cloud storage for images
 - Material-UI - Front-end Modules and Icons
 - Mapbox - Interactive world map
+- Styled-components - Adding readability and CSS functionality
 
 ## API's
 
@@ -28,3 +29,19 @@ Website [Live](https://tacolover-1.herokuapp.com/) here
 # User Interface
 
 A fully responsive and mobile friendly interface
+
+### Width - 1600px
+
+![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/Tacolover-%201600px.PNG)
+
+### Width - 1280px
+
+![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/Tacolover-%201280px.PNG)
+
+### Width - 768px
+
+![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/Tacolover-%20768px.PNG)
+
+### Width - 480px
+
+![alt text](https://github.com/JoncarlosT/TacoLover-V2/blob/main/client/public/github/Tacolover-%20480px.PNG)
