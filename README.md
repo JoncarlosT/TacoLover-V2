@@ -119,5 +119,5 @@ A fully responsive and mobile friendly interface
 
 # Credit
 
-All recipes were from Spoonacular api
-All images were used from pexels.com
+- All recipes were from Spoonacular api
+- All images were used from pexels.com
