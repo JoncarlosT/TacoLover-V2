@@ -46,7 +46,7 @@ export default function SingleRestaurant() {
   //DELETE RESTAURANT
   const deleteRestaurant = async () => {
     await axios
-      .delete(DevLocalHost() + "/restaurants", {
+      .delete(DevLocalHost() + "/api/restaurants", {
         data: {
           _id: selectedRestaurant._id,
           images: selectedRestaurant.images,
@@ -59,7 +59,7 @@ export default function SingleRestaurant() {
 
   const deleteReview = async (id) => {
     await axios
-      .delete(DevLocalHost() + "/review/recipe", {
+      .delete(DevLocalHost() + "/api/review/recipe", {
         data: { _id: id },
       })
       .then(updateReviews())
@@ -69,9 +69,11 @@ export default function SingleRestaurant() {
   //GET CURRENT USER ID
   const [currentUserId, setCurrentUserId] = useState("");
   const getCurrentUserId = async () => {
-    await axios.get(DevLocalHost() + "/authentication/userid").then((res) => {
-      setCurrentUserId(res.data);
-    });
+    await axios
+      .get(DevLocalHost() + "/api/authentication/userid")
+      .then((res) => {
+        setCurrentUserId(res.data);
+      });
   };
 
   useEffect(() => {
@@ -84,7 +86,7 @@ export default function SingleRestaurant() {
   useEffect(() => {
     const getReviews = async () => {
       await axios
-        .get(DevLocalHost() + "/restaurants/review", {
+        .get(DevLocalHost() + "/api/restaurants/review", {
           params: { restaurantId: selectedRestaurant._id },
         })
         .then((res) => setReviews(res.data));
@@ -95,7 +97,7 @@ export default function SingleRestaurant() {
 
   const updateReviews = async () => {
     await axios
-      .get(DevLocalHost() + "/restaurants/review", {
+      .get(DevLocalHost() + "/api/restaurants/review", {
         params: { restaurantId: selectedRestaurant._id },
       })
       .then((res) => setReviews(res.data));
@@ -113,7 +115,7 @@ export default function SingleRestaurant() {
     };
 
     await axios
-      .post(DevLocalHost() + "/restaurants/review", review)
+      .post(DevLocalHost() + "/api/restaurants/review", review)
       .then(setUserComment(""))
       .then(updateReviews())
       .then(updateReviews());

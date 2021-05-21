@@ -33,7 +33,7 @@ export default function CreateRestaurant() {
       location,
     };
     await axios
-      .post(DevLocalHost() + "/restaurants/add", restaurant)
+      .post(DevLocalHost() + "/api/restaurants/add", restaurant)
       .then(history.push("/restaurants"));
   };
 

@@ -46,7 +46,7 @@ export default function SingleRecipe() {
 
   const deleteReview = async (id) => {
     await axios
-      .delete(DevLocalHost() + "/review/recipe", {
+      .delete(DevLocalHost() + "/api/review/recipe", {
         data: { _id: id },
       })
       .then(updateReviews())
@@ -74,7 +74,7 @@ export default function SingleRecipe() {
   useEffect(() => {
     const getReviews = async () => {
       await axios
-        .get(DevLocalHost() + "/review/recipe", {
+        .get(DevLocalHost() + "/api/review/recipe", {
           params: { tacoId: tacoInfo.id },
         })
         .then((res) => setReviews(res.data));
@@ -85,7 +85,7 @@ export default function SingleRecipe() {
 
   const updateReviews = async () => {
     await axios
-      .get(DevLocalHost() + "/review/recipe", {
+      .get(DevLocalHost() + "/api/review/recipe", {
         params: { tacoId: tacoInfo.id },
       })
       .then((res) => setReviews(res.data));
@@ -94,9 +94,11 @@ export default function SingleRecipe() {
   //GET CURRENT USER ID
   const [currentUserId, setCurrentUserId] = useState("");
   const getCurrentUserId = async () => {
-    await axios.get(DevLocalHost() + "/authentication/userid").then((res) => {
-      setCurrentUserId(res.data);
-    });
+    await axios
+      .get(DevLocalHost() + "/api/authentication/userid")
+      .then((res) => {
+        setCurrentUserId(res.data);
+      });
   };
 
   useEffect(() => {
@@ -114,7 +116,7 @@ export default function SingleRecipe() {
       rating: userRating,
     };
     await axios
-      .post(DevLocalHost() + "/review/recipe", review)
+      .post(DevLocalHost() + "/api/review/recipe", review)
       .then(setUserComment(""))
       .then(setUserRating(3))
       .then(updateReviews())

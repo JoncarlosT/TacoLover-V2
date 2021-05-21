@@ -12,7 +12,7 @@ function AuthenticationContextProvider(props) {
 
   const getLoggedIn = async () => {
     const LoggedInRes = await axios.get(
-      DevLocalHost() + "/authentication/loggedIn"
+      DevLocalHost() + "/api/authentication/loggedIn"
     );
     setLoggedIn(LoggedInRes.data);
   };

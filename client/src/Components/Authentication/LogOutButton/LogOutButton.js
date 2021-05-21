@@ -16,7 +16,7 @@ export default function LogOutButton() {
   const history = useHistory();
 
   const logOut = async () => {
-    await axios.get(DevLocalHost() + "/authentication/logout");
+    await axios.get(DevLocalHost() + "/api/authentication/logout");
     await getLoggedIn();
     history.push("/");
   };

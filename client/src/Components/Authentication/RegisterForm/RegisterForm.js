@@ -40,7 +40,7 @@ export default function RegisterForm() {
     };
 
     try {
-      await axios.post(DevLocalHost() + "/authentication/", registerData);
+      await axios.post(DevLocalHost() + "/api/authentication/", registerData);
       await getLoggedIn();
       history.push("/restaurants");
     } catch (err) {

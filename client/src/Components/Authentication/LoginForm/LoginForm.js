@@ -38,7 +38,7 @@ export default function LoginForm() {
     };
 
     try {
-      await axios.post(DevLocalHost() + "/authentication/login", loginData);
+      await axios.post(DevLocalHost() + "/api/authentication/login", loginData);
       await getLoggedIn();
       history.push("/Restaurants");
     } catch (err) {
