@@ -37,7 +37,7 @@ export default function RestaurantsPage() {
 
   const getRestaurants = async () => {
     axios
-      .get(DevLocalHost() + "/backend/restaurants")
+      .get(DevLocalHost() + "/restaurants")
       .then((res) => setRestaurants(res.data));
   };
 

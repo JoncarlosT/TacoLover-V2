@@ -35,10 +35,7 @@ export default function Router() {
         <Switch>
           <Route path="/" exact component={LandingPage} />
 
-          <Route
-            path="https://tacolover-1.herokuapp.com/Restaurants"
-            component={RestaurantsPage}
-          />
+          <Route path="/Restaurants" component={RestaurantsPage} />
 
           <Route
             path={`/Restaurant/${selectedRestaurant._id}`}
