@@ -12,6 +12,7 @@ import {
   RestaurantsWrapper,
   StyledRestaurantsPage,
   TacoIcon,
+  Text,
 } from "./styles";
 
 import AuthenticationContext from "../../Context/AuthenticationContext";
@@ -91,12 +92,14 @@ export default function RestaurantsPage() {
         })}
       </RestaurantsWrapper>
 
-      {loggedIn && (
+      {loggedIn ? (
         <CreateRestaurantWrapper>
           <CreateRestaurantButton to="/CreateRestaurant/">
             ADD RESTAURANT
           </CreateRestaurantButton>
         </CreateRestaurantWrapper>
+      ) : (
+        <Text>Login to Add Locations</Text>
       )}
     </StyledRestaurantsPage>
   );

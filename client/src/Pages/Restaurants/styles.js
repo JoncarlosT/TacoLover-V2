@@ -41,3 +41,10 @@ export const CreateRestaurantButton = styled(Link)`
     background-color: #ffffff;
   }
 `;
+
+export const Text = styled.h1`
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px;
+`;
