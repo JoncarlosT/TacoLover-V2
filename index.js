@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json({ limit: "100mb" }));
 app.use(cookieParser());
-app.use(cors({ origin: ["http://localhost:3000"], credentials: true }));
+app.use(cors());
 
 app.listen(PORT, () => {
   console.log(`Listening on PORT:${PORT}`);
