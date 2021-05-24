@@ -41,12 +41,7 @@ const RecipesList = [
     image: "https://spoonacular.com/recipeImages/656820-312x231.jpg",
     imageType: "jpg",
   },
-  {
-    id: 715533,
-    title: "Filet Mignon Soft Tacos",
-    image: "https://spoonacular.com/recipeImages/715533-312x231.jpg",
-    imageType: "jpg",
-  },
+
   {
     id: 609415,
     title: "Ancho Ground Beef Tacos",
@@ -67,24 +62,12 @@ const RecipesList = [
     imageType: "jpg",
   },
   {
-    id: 1505411,
-    title: "Ground Beef Street Tacos",
-    image: "https://spoonacular.com/recipeImages/1505411-312x231.jpg",
-    imageType: "jpg",
-  },
-  {
     id: 633352,
     title: "Bacon Wrapped Tofu Tacos",
     image: "https://spoonacular.com/recipeImages/633352-312x231.jpg",
     imageType: "jpg",
   },
 
-  {
-    id: 986003,
-    title: "Instant Pot Chicken Tacos",
-    image: "https://spoonacular.com/recipeImages/986003-312x231.jpg",
-    imageType: "jpg",
-  },
   {
     id: 652635,
     title: "Mushroom and Vegetable Tacos",
