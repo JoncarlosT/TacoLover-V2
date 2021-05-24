@@ -109,19 +109,6 @@ const RecipesList = [
     image: "https://spoonacular.com/recipeImages/713957-312x231.jpg",
     imageType: "jpg",
   },
-
-  {
-    id: 1063645,
-    title: "The Secret to Easy Skillet Filet Mignon Steak Tacos",
-    image: "https://spoonacular.com/recipeImages/1063645-312x231.jpg",
-    imageType: "jpg",
-  },
-  {
-    id: 710765,
-    title: "How to Make a Chicken Taco Crock Pot",
-    image: "https://spoonacular.com/recipeImages/710765-312x231.jpg",
-    imageType: "jpg",
-  },
 ];
 
 export default RecipesList;
