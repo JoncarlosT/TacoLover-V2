@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const JWT_SECRET = require("../config/keys").JWT_SECRET;
 
 //REGISTER USER
 router.post("/", async (req, res) => {
@@ -50,7 +51,7 @@ router.post("/", async (req, res) => {
       {
         user: savedUser._id,
       },
-      process.env.JWT_SECRET
+      JWT_SECRET
     );
 
     //SEND THE TOKEN IN A HTTP-ONLY COOKIE
@@ -91,7 +92,7 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ errorMessage: "Wrong Email Or Password" });
 
     //SIGN THE TOKEN
-    const token = jwt.sign({ user: existingUser._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ user: existingUser._id }, JWT_SECRET);
 
     //SENDING THE TOKEN IN A HTTP-ONLY COOKIE
     res
@@ -121,7 +122,7 @@ router.get("/loggedIn", (req, res) => {
     const token = req.cookies.token;
     if (!token) return res.json(false);
 
-    jwt.verify(token, process.env.JWT_SECRET);
+    jwt.verify(token, JWT_SECRET);
 
     res.send(true);
   } catch (err) {
@@ -136,9 +137,9 @@ router.get("/userid", (req, res) => {
     const token = req.cookies.token;
     if (!token) return res.json(false);
 
-    jwt.verify(token, process.env.JWT_SECRET);
+    jwt.verify(token, JWT_SECRET);
 
-    res.send(jwt.verify(token, process.env.JWT_SECRET).user);
+    res.send(jwt.verify(token, JWT_SECRET).user);
   } catch (err) {
     console.error(err);
     res.json(false);

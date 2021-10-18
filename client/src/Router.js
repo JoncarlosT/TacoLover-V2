@@ -18,6 +18,7 @@ import RestaurantsPage from "./Pages/Restaurants/RestaurantsPage";
 import LoginPage from "./Pages/Login/LoginPage";
 import SingleRestaurant from "./Pages/SingleRestaurant/SingleRestaurant";
 import CreateRestaurant from "./Pages/CreateRestaurant/CreateRestaurant";
+import UserPage from "./Pages/User/UserPage";
 
 import styled from "styled-components";
 import BG from "./Assets/Taco-bg.jpg";
@@ -43,7 +44,11 @@ export default function Router() {
           />
 
           {loggedIn && (
-            <Route path="/CreateRestaurant/" component={CreateRestaurant} />
+            <>
+              <Route path="/CreateRestaurant/" component={CreateRestaurant} />
+
+              <Route path="/UserPage" component={UserPage} />
+            </>
           )}
 
           <Route path="/Recipes" component={RecipesPage} />

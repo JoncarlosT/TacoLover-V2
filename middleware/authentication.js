@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const JWT_SECRET = require("../config/keys").JWT_SECRET;
 
 const authentication = (req, res, next) => {
   try {
@@ -8,7 +9,7 @@ const authentication = (req, res, next) => {
         .status(401)
         .json({ errorMessage: "Unauthorized, Please Login" });
 
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    const verified = jwt.verify(token, JWT_SECRET);
 
     req.user = verified.user;
     next();

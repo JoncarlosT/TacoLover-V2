@@ -4,6 +4,8 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 import Rating from "react-rating";
 
+import keys from "../../config/keys";
+
 //  IMPORT STYLES
 import {
   StyledSingleRecipe,
@@ -58,7 +60,7 @@ export default function SingleRecipe() {
 
   const getTaco = async (selectedFood) => {
     await fetch(
-      `https://api.spoonacular.com/recipes/${selectedFood.id}/information?includeNutrition=false&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
+      `https://api.spoonacular.com/recipes/${selectedFood.id}/information?includeNutrition=false&apiKey=${keys.REACT_APP_SPOONACULAR_API_KEY}`
     )
       .then((res) => res.json())
       .then((res) => setTacoInfo(res));
