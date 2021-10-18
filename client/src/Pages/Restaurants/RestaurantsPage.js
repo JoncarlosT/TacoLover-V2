@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import ReactMap, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import DevLocalHost from "../../GlobalProvider";
+import keys from "../../config/keys";
 
 import axios from "axios";
 
@@ -52,7 +53,7 @@ export default function RestaurantsPage() {
     <StyledRestaurantsPage>
       <ReactMap
         {...viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        mapboxApiAccessToken={keys.REACT_APP_MAPBOX_TOKEN}
         mapStyle="mapbox://styles/jc1280/ckm16fh6i9x6n17o0pm4r5091"
         onViewportChange={(viewport) => setViewport(viewport)}
       >

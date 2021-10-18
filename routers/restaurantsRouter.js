@@ -3,7 +3,7 @@ const authentication = require("../middleware/authentication");
 const Restaurant = require("../models/restaurantModel");
 const Review = require("../models/reviewModel");
 const mbxCeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
-const mapBoxToken = process.env.MAPBOX_TOKEN;
+const mapBoxToken = require("../config/keys").MAPBOX_TOKEN;
 const geocoder = mbxCeocoding({ accessToken: mapBoxToken });
 const { cloudinary } = require("../cloudinary/index");
 

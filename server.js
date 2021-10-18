@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const path = require("path");
+const MBD_CONNECT = require("./config/keys").MBD_CONNECT;
 
 dotenv.config();
 
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json({ limit: "100mb" }));
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({ origin: ["http://localhost:3000"], credentials: true }));
 // { origin: ["http://localhost:3000"], credentials: true }
 
 app.listen(PORT, () => {
@@ -22,7 +23,7 @@ app.listen(PORT, () => {
 
 //CONNECTING TO MONGODB
 mongoose.connect(
-  process.env.MBD_CONNECT,
+  MBD_CONNECT,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
